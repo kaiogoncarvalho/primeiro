@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<conf>
+	<item name="user"> Bob </item>
+	<item name="pass"> NovoPass </item>
+	<item name="host"> Localhost </item>
+</conf>
