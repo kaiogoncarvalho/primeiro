@@ -1,0 +1,13 @@
+#Isso é um comentário
+
+#Ignore todos os arquivos terminados em .a ou .b
+*.[ab]
+
+#Ignore todos os arquivos dentro do diretório Teste
+Teste/
+
+#Mas não ignore o arquivo teste.php dentro do diretório Teste
+!Teste/teste.php
+
+#Ignore o arquivo Teste2/notes.txt mas não ignore o arquivo Teste2/pasta/notes.txt
+Teste2/*.txt
