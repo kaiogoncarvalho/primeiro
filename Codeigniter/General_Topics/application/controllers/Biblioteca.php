@@ -7,5 +7,6 @@ class Biblioteca extends CI_Controller{
 		$this->load->library('example_library');
 		$this->example_library->bar();
 		$this->load->library('email');
+		$this->email->teste();
 	}
 }
