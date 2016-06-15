@@ -18,6 +18,6 @@ class Privada{
 	}
 	
 	public function publico(){
-		echo "Método Público";
+		echo "Método Público 2";
 	}
 }
