@@ -80,4 +80,5 @@ class Comum extends CI_Controller{
 		echo $hash;
 		var_dump(password_get_info($hash));
 	}
+	
 }
