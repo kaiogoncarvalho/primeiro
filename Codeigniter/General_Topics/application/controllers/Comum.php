@@ -78,7 +78,72 @@ class Comum extends CI_Controller{
 		echo '<b>password_hash($password, $algo, [,$options])</b> <br>';
 		$hash = password_hash($senha , PASSWORD_BCRYPT);
 		echo $hash;
+		echo '<br>';
+		echo '<b>password_get_info($password, $algo, [,$options])</b> <br>';
 		var_dump(password_get_info($hash));
+		echo '<br>';
+		echo '<b>password_needs_rehash($hash, $algo, [,$options])</b> <br>';
+		echo (password_needs_rehash($hash, PASSWORD_DEFAULT)) ? 'Aceita rehash' : 'Não aceita rehash';
+		echo '<br>';
+		echo '<b>password_verify($password, $hash) </b> <br>';
+		echo (password_verify($senha, $hash)) ? "Hash combina com a senha" : "Hash não combina com a senha";		
 	}
+	
+	public function hashing($first = 'padrao', $second = 'padrao'){
+		echo '<b> hash_equals($known_string, $user_string) </b> <br>';
+		echo (hash_equals(crypt($first,'$2a$07$usesomesillystringforsalt$' ),crypt($second,'$2a$07$usesomesillystringforsalt$' ))) ? 'Senhas iguais' : 'Senhas diferentes';
+		
+	}
+	
+	public function mb_string($str = 'Kaio Gonçalves Carvalho'){
+		echo "Palavra: $str <br>";
+		echo '<b> mb_strlen($str [, $encoding = NULL]) </b> <br>';
+		echo mb_strlen($str);
+		echo '<br>';
+		echo '<b> mb_strpos($str, $start [,offset = 0[, encoding = NULL]]) </b> <br>';
+		echo '"lves" começa na posição '.mb_strpos($str, 'lves');
+		echo '<br>';
+		echo '<b> mb_substr($str, $start [, $length = NULL [, $encoding = NULL ]]) </b> <br>';
+		echo 'começando na posição 5 com tamanho 5 temos: '. mb_substr($str, 5 , 5);		
+	}
+	
+	public function standard_functions(){
+		$array = array(
+			array(
+				'id' => '522',
+				'fruta' => 'Maça', 
+			),
+			array(
+				'id' => '523',
+				'fruta' => 'Melancia', 
+			),
+			array(
+				'id' => '524',
+				'fruta' => 'Uva', 
+			),
+			array(
+				'id' => '525',
+				'fruta' => 'Pera', 
+			),
+		);
+		echo '<b> array_column(array $array, $column_key [, $index_key = NULL]) </b> <br>';
+		echo var_dump(array_column($array, 'fruta', 'id'));
+		echo '<br>';
+		echo '<b> array_replace(array $array1 [...]) </b> <br>';
+		$array1 = array('Uva', 'Umbu', 'Jaboticaba');
+		$replace = array(1 => 'Morango', 0 => 'Mexerica');
+		$replace2 = array(0 => 'Laranja');
+		echo var_dump(array_replace($array1, $replace, $replace2));
+		echo '<br>';
+		echo '<b> array_replace_recursive(array $array1 [...]) </b> <br>';
+		$array2 = array('Citrus' => array('Laranja', 'Maracuja', 'Maça Verde'));
+		$array3 = array('Citrus' => array('Coca-cola'));
+		echo var_dump(array_replace_recursive($array2, $array3));
+		
+		
+		
+		
+	}
+	
 	
 }
