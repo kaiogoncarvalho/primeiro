@@ -23,6 +23,5 @@ class Blog_1 extends CI_Controller{
 
 		$obj = new Teste;	
 		$this->load->view('blog/blogview', $obj);
-	}
-	
+	}	
 }
