@@ -50,5 +50,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'blog';
+$route['404_override'] = '';
 $route['produtos'] = 'produtos/sapato';
+$route['function/(:num)'] = 'comum/standard_functions';
+$route['([a-z]+)'] = 'comum/$1';
+$route['funcao/([a-z]+)'] = 'comum/mb_string';
+$route['funcao/(:any)'] = 'comum/hashing';
+$route['produtos/([a-z]+)'] = function ($f){
+	return 'comum/'.$f.'_string';
+};
+$route['translate_uri_dashes'] = FALSE;
+
 

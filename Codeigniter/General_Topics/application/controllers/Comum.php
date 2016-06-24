@@ -139,7 +139,18 @@ class Comum extends CI_Controller{
 		$array2 = array('Citrus' => array('Laranja', 'Maracuja', 'Maça Verde'));
 		$array3 = array('Citrus' => array('Coca-cola'));
 		echo var_dump(array_replace_recursive($array2, $array3));
-		
+		echo '<br>';
+		echo '<b> bin2hex($data) </b> <br>';
+		$teste = 'Kaio';
+		$hexa = bin2hex($teste);
+		echo $hexa;
+		echo '<br>';
+		echo '<b> hex2bin($data) </b> <br>';
+		$hex = hex2bin($hexa);
+		var_dump($hex);
+		echo "<br>";
+		echo '<b> quoted_printable_encode($str) </b> <br>';
+		echo quoted_printable_encode('Kaio');
 		
 		
 		
