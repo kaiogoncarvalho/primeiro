@@ -8,6 +8,7 @@ class Blog extends CI_Controller{
 	
 	public function index(){
 		$this->load->view('blogview');
+		$this->output->cache(10);
 	}
 	
 	public function comment($param = 'Não mudou'){
@@ -21,8 +22,8 @@ class Blog extends CI_Controller{
 		show_404();
 	}
 	
-	public function _output($output){
-		echo "NADA";
-		echo $output;
-	}
+	// public function _output($output){
+		// echo "NADA";
+		// echo $output;
+	// }
 }
